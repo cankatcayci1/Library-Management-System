@@ -1,0 +1,138 @@
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: localhost    Database: library
+-- ------------------------------------------------------
+-- Server version	8.2.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admins` (
+  `adminId` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`adminId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admins`
+--
+
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES (1,'Admin','123456');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `books`
+--
+
+DROP TABLE IF EXISTS `books`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `books` (
+  `bookId` int NOT NULL AUTO_INCREMENT,
+  `bookName` varchar(100) DEFAULT NULL,
+  `authorName` varchar(100) DEFAULT NULL,
+  `numberOfPage` int NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `yearOfPublication` int NOT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`bookId`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `books`
+--
+
+LOCK TABLES `books` WRITE;
+/*!40000 ALTER TABLE `books` DISABLE KEYS */;
+INSERT INTO `books` VALUES (1,'BEYAZ DİŞ','JACK LONDON',250,'MACERA',1906,1),(2,'SİNEKLİ BAKKAL','HALİDE EDİP ADIVAR',250,'ROMAN',1912,1),(3,'SAATLERİ AYARLAMA ENSTİTÜSÜ','AHMET HAMDİ TANPINAR',350,'ROMAN',1961,1),(4,'SERENAD','ZÜLFÜ LİVANELİ',350,'ROMAN',2019,1),(5,'SARAYBOSNA MARLBOROSU','MİLJENKO JERGOVİĆ',480,'ROMAN',1994,1),(6,'ŞEKER PORTAKALI','JOSE MAURO DE VASCONCELOS',200,'ROMAN',1968,1),(7,'VATAN YAHUT SİLİSTRE','NAMIK KEMAL',220,'TARİH',1873,1),(8,'KUYUCAKLI YUSUF','SABAHATTİN ALİ',280,'ROMAN',1937,1),(9,'İNTİBAH','NAMIK KEMAL',240,'ROMAN',1876,0),(10,'HUZUR SOKAĞI','AZİZ NESİN',200,'HİKAYE',1964,1),(11,'SUÇ VE CEZA','FYODOR DOSTOYEVSKY',600,'ROMAN',1866,1),(12,'GURUR VE ÖNYARGI','JANE AUSTEN',400,'ROMAN',1813,1),(13,'SAVAŞ VE BARIŞ','LEO TOLSTOY',800,'TARİH',1869,1),(14,'BÜYÜK GATSBY','F. SCOTT FİTZGERALD',250,'ROMAN',1925,1),(15,'1984','GEORGE ORWELL',320,'KURGU',1949,0),(16,'YÜZÜKLERİN EFENDİSİ','J.R.R. TOLKİEN',1200,'KURGU',1954,1),(17,'YAŞLI ADAM VE DENİZ','ERNEST HEMİNGWAY',120,'ROMAN',1952,1),(18,'CESUR YENİ DÜNYA','ALDOUS HUXLEY',280,'KURGU',1932,1),(19,'SESSİZ HASTALIK','ALEX MİCHAELİDES',320,'POLİSİYE',2019,1),(20,'AŞK','ELİF ŞAFAK',360,'ROMAN',2009,0),(21,'TUTUNAMAYANLAR','OĞUZ ATAY',480,'ROMAN',1972,1),(22,'İSTANBUL HATIRASI','AHMET ÜMİT',400,'ROMAN',1990,1),(23,'TEMİZ KOD: ÇEVİK YAZILIM ZANAATKARLIĞI EL KİTABI','ROBERT C. MARTİN',464,'PROGRAMLAMA',2008,1),(24,'ÖRNEKLERLE TEST ODAKLI GELİŞTİRME','KENT BECK',240,'PROGRAMLAMA',2002,1),(25,'TASARIM DESENLERİ: YENİDEN KULLANILABİLİR NESNE YÖNELİMLİ YAZILIM ELEMANLARI','ERİCH GAMMA',416,'PROGRAMLAMA',1994,1),(26,'MONEYBALL: ADİL OLMAYAN BİR OYUNU KAZANMANIN SANATI','MİCHAEL LEWİS',320,'SPOR',2003,1),(27,'OYUN','KEN DRYDEN',384,'SPOR',1983,1),(28,'DÖVÜŞ','NORMAN MAİLER',240,'SPOR',1975,1),(29,'EN BÜYÜK: KENDİ HİKAYEM','MUHAMMAD ALİ',416,'BİYOGRAFİ',1975,1),(30,'WRİGHT KARDEŞLER','DAVİD MCCULLOUGH',336,'TARİH',2015,1),(31,'ATOM BOMBASININ YAPIMI','RİCHARD RHODES',886,'TARİH',1986,1),(32,'NASCAR TARİHİ','NATE LEBOUTİLLİER',192,'ARAÇLAR',2019,1),(33,'ENZO FERRARİ: BİR HAYAT','RİCHARD WİLLİAMS',368,'ARAÇLAR',2018,1),(34,'YAĞMURDA YARIŞIN SANATI','GARTH STEİN',321,'ROMAN',2008,1),(35,'KAN VE GÜL','HALİT ZİYA UŞAKLIGİL',280,'POLİSİYE',1911,1),(36,'BİR CİNAYET ROMANI','AHMET ÜMİT',416,'POLİSİYE',2018,1),(37,'DÜŞERKEN','OĞUZ ATAY',250,'POLİSİYE',1971,1),(38,'KAR KOKUSU','AHMET ÜMİT',368,'POLİSİYE',2004,1),(39,'KARLAR ÜLKESİ HOTEL','AHMET ÜMİT',384,'POLİSİYE',2015,1),(40,'KARA KİTAP','ORHAN PAMUK',432,'MACERA',1990,1),(41,'MOR','CEM AKAŞ',256,'MACERA',2016,1),(42,'EĞİTİMLİ','TARA WESTOVER',352,'BİYOGRAFİ',2018,1),(43,'ALIŞKANLIĞIN GÜCÜ','CHARLES DUHİGG',400,'KİŞİSEL GELİŞİM',2012,1),(44,'GÖKYÜZÜ','AHMET HİKMET MÜFTÜOĞLU',180,'ŞİİR',1965,1),(45,'AKIL ÇAĞI','NECİP FAZIL KISAKÜREK',250,'FELSEFE',1951,1),(46,'HAKKA SIĞINDIK','HÜSEYİN RAHMİ GÜRPINAR',300,'ROMAN',1921,1),(47,'ZORBA','NİKOS KAZANCAKİS',367,'KİŞİSEL GELİŞİM',1946,1),(48,'İNSAN NEYLE YAŞAR?','LEV TOLSTOY',134,'KİŞİSEL GELİŞİM',1886,1),(49,'SONSUZLUĞUN SONU','DOSTOYEVSKİ',272,'KİŞİSEL GELİŞİM',1869,1),(50,'İÇİMİZDEKİ ŞEYTAN','SABAHATTİN ALİ',250,'KİŞİSEL GELİŞİM',1940,1),(51,'SENİ İÇİMDEN TERK EDİYORUM','CAN DÜNDAR',208,'KİŞİSEL GELİŞİM',2016,1),(52,'İNSAN DOĞASI ÜZERİNE','MEHMET MURAT İLDAN',250,'KİŞİSEL GELİŞİM',2018,1),(53,'SANA GÜL BAHÇESİ VADETMEDİM','AHMET ÜMİT',300,'KİŞİSEL GELİŞİM',2012,1),(54,'MUTLULUK','AHMET ÜMİT',360,'KİŞİSEL GELİŞİM',2013,1),(55,'ASDAS','DSADAS',210,'TARİH',1998,1);
+/*!40000 ALTER TABLE `books` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `borrowed_books`
+--
+
+DROP TABLE IF EXISTS `borrowed_books`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `borrowed_books` (
+  `borrowId` int NOT NULL AUTO_INCREMENT,
+  `bookName` varchar(100) DEFAULT NULL,
+  `authorName` varchar(100) DEFAULT NULL,
+  `numberOfPage` int NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `yearOfPublication` int NOT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`borrowId`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `borrowed_books`
+--
+
+LOCK TABLES `borrowed_books` WRITE;
+/*!40000 ALTER TABLE `borrowed_books` DISABLE KEYS */;
+INSERT INTO `borrowed_books` VALUES (15,'1984','GEORGE ORWELL',320,'KURGU',1949,'akın12',0),(17,'AŞK','ELİF ŞAFAK',360,'ROMAN',2009,'akın12',0),(18,'İNTİBAH','NAMIK KEMAL',240,'ROMAN',1876,'cankat123',0);
+/*!40000 ALTER TABLE `borrowed_books` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `userId` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `surname` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','admin','Admin','123456'),(2,'CANKAT','ÇAYCI','cankat123','cankat123'),(3,'AKIN','KARLITEPE','akın12','akın21'),(4,'İSMAİL','GÜLER','ismail13','ismail12'),(5,'AHMET','UYGUN','ahmet12','ahmet21'),(6,'SEMİH','SOLGUN','semih12','semih21'),(7,'CAN','GURUK','can21','can12'),(8,'ARDA','GÜLER','arda21','arda12'),(9,'BARTUĞ','YILDIRIM','bartuğ12','bartuğ21'),(10,'KEMAL','SOYDAN','kemal12','kemal21');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-02-29 22:58:48
